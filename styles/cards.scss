@@ -1,0 +1,29 @@
+.primary-card-animation {
+  animation: bouncing alternate infinite 1s;
+  background: var(--v-card-base) !important;
+  border-radius: 10px !important;
+  transition: all ease-in-out 0.3s !important;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
+}
+
+.primary-card-animation:hover {
+  background: var(--v-info-base) !important;
+  color: var(--v-primary-base) !important;
+  border-radius: 10px !important;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2) !important;
+  animation: none;
+}
+
+.primary-card {
+  background: var(--v-card-base) !important;
+  border-radius: 10px !important;
+  transition: all ease-in-out 0.3s !important;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
+}
+
+.primary-card:hover {
+  background: var(--v-info-base) !important;
+  color: var(--v-primary-base) !important;
+  border-radius: 10px !important;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2) !important;
+}

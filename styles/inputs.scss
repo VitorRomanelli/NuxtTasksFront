@@ -1,0 +1,30 @@
+.primary-input {
+  border-radius: 10px !important;
+  transition: 0.3s !important;
+}
+
+.primary-input:hover fieldset {
+  box-shadow: 4px 4px 20px 7px rgba(0, 0, 0, 0.2) !important;
+}
+
+.primary-input:hover {
+  transform: scale(1.02);
+}
+
+.primary-input fieldset {
+  border: none !important;
+  transition: all 0.3s 0s ease-in-out !important;
+}
+
+.primary-input input::placeholder {
+  color: var(--v-primarytext-base) !important;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.primary-input input {
+  color: var(--v-primarytext-base) !important;
+  font-weight: 400;
+  font-size: 14px;
+  caret-color: #fff;
+}

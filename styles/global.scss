@@ -1,0 +1,35 @@
+@import url('./buttons.scss');
+@import url('./inputs.scss');
+@import url('./texts.scss');
+@import url('./animations.scss');
+@import url('./cards.scss');
+
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0, 5s;
+}
+.page-enter,
+.page-leave-active {
+  opacity: 0;
+}
+
+body::-webkit-scrollbar {
+  background-color: var(--v-primary);
+  width: 12px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(114, 119, 131, 0.5);
+  border-radius: 20px;
+}
+
+.v-dialog::-webkit-scrollbar {
+  background-color: #e9e9e9;
+  width: 10px;
+  border-radius: 3.5px;
+}
+
+.v-dialog::-webkit-scrollbar-thumb {
+  background: #c4c4c4;
+  border-radius: 3.5px;
+}
