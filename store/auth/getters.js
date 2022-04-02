@@ -10,13 +10,8 @@ export default {
     },
 
     authenticated(state) {
-        let token = state.token;
-        let validTo = state.validTo;
-
-        if(process.client) {
-            token = localStorage.getItem('token');
-            validTo = localStorage.getItem('validTo');
-        }
+        const token = state.token;
+        const validTo = state.validTo;
 
         if(token !== '' && token !== null) {
             if(moment().isBefore(moment(validTo))) {

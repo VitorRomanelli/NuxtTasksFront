@@ -1,5 +1,5 @@
 <template>
-  <v-container class="d-flex justify-center align-center fill-height">
+  <v-container class="d-flex justify-end align-center fill-height">
     <transition appear>
       <NuxtChild />
     </transition>

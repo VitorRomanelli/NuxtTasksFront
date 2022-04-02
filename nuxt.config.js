@@ -15,6 +15,46 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/task.png' }],
   },
 
+  animejs: true,
+
+  layoutTransition: 'my-layouts',
+
+  pageTransition: {
+    name: 'page',
+    mode: 'out-in',
+    css: false,
+
+    beforeEnter(el) {
+      this.$anime.set(el, {
+        opacity: 0
+      })
+    },
+
+    enter(el, done) {
+      this.$anime({
+        targets: el,
+        opacity: [0, 1],
+        duration: 500,
+        easing: 'easeInOutSine',
+        complete: done
+      })
+    },
+
+    leave(el, done) {
+      this.$anime({
+        targets: el,
+        opacity: [1, 0],
+        duration: 500,
+        easing: 'easeInOutSine',
+        complete: done
+      })
+    }
+  },
+
+  router: {
+    middleware: 'auth'
+  },
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ['~/styles/global.scss'],
 
@@ -26,6 +66,7 @@ export default {
   plugins: [
     '~plugins/vue-the-mask.js',
     '~/plugins/tilt.js',
+    '~/plugins/storage',
     '~/plugins/axios'
   ],
 
@@ -40,6 +81,8 @@ export default {
     '@nuxtjs/vuetify',
 
     '@nuxtjs/moment',
+
+    'nuxt-animejs',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -50,7 +93,11 @@ export default {
   ],
 
   toast: {
-    // Vue Toastification plugin options
+    transition: "Vue-Toastification__fade",
+  },
+
+  env: {
+    API_KEY: process.env.API_KEY
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

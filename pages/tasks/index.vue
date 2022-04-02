@@ -1,11 +1,6 @@
 <template>
   <div>
-    <div style="width: 100%">
-      <Header
-        title="Tarefas"
-        description="Cadastre novas tarefas e analise detalhes das tarefas anteriores"
-      />
-    </div>
+    <div style="width: 100%"></div>
     <div class="d-flex justify-end ma-4">
       <v-btn class="primary-button">
         Nova tarefa
@@ -152,7 +147,8 @@
         </div>
       </v-col>
       <v-col cols="12" lg="8">
-        <v-card class="primary-card pa-4">
+        <v-card class="primary-card text-center pa-4">
+          <h3 class="title-h3 my-3">Tarefas no mês</h3>
           <BarChart :data="chartdata" :options="options" />
         </v-card>
       </v-col>

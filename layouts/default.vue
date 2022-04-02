@@ -27,8 +27,7 @@
           >
             <v-tab to="/"> Perfil </v-tab>
             <v-tab to="/tasks"> Tarefas </v-tab>
-            <v-tab to="/users"> Usuários </v-tab>
-            <v-tab to="/roles"> Cargos </v-tab>
+            <v-tab v-if="user.type == 0" to="/users"> Usuários </v-tab>
           </v-tabs>
         </div>
 
@@ -55,11 +54,18 @@ export default {
     return {}
   },
 
+  computed: {
+    user() {
+      return this.$store.state.auth.user !== null
+        ? this.$store.state.auth.user
+        : {}
+    },
+  },
+
   methods: {
     logout() {
-      this.$store.commit('user/setUser', null)
-      this.$store.commit('user/setToken', null)
-      this.$store.commit('user/setValidTo', null)
+      this.$store.dispatch('auth/logout')
+
       this.$router.push('/auth')
     },
   },

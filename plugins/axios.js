@@ -1,5 +1,10 @@
 export default function ({ $axios, $toast, store, redirect }) {
   $axios.onRequest((config) => {
+    const token = store.state.auth.token;
+    if(token) {
+      config.headers.Authorization = 'Bearer ' + token;
+    }
+
     store._vm.$nextTick(() => {
       if (store._vm.$nuxt) {
         store._vm.$nuxt.$loading.start()
